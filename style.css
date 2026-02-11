@@ -475,24 +475,133 @@ footer {
 }
 
 /* ==========================================================================
-   8. MOBILE RESPONSIVENESS
+   8. MOBILE & RESPONSIVENESS OVERHAUL
    ========================================================================== */
+
+/* Tablet & Below (992px) */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 60px; /* Scaling down from 80px */
+    }
+    
+    .large, .small {
+        grid-column: span 12; /* Everything goes full width */
+    }
+}
+
+/* Phones (768px and below) */
 @media (max-width: 768px) {
-    .match-card {
-        padding: 30px 0;
+    
+    /* 1. NAVIGATION: The "Apple" Scroll Trick */
+    /* Instead of a messy list or a burger menu, we let the links scroll horizontally */
+    .nav-content {
+        justify-content: flex-start;
+        gap: 20px;
     }
-    .match-teams, .score-pill {
-        font-size: 20px;
+
+    .nav-links {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch; /* Smooth scroll for iPhone */
+        gap: 20px;
+        scrollbar-width: none; /* Hide scrollbar for Chrome/Safari */
     }
+
+    .nav-links::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome/Safari */
+    }
+
+    /* 2. HERO: Stop the text from breaking and looking huge */
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+
+    .hero h1 {
+        font-size: 42px; /* Perfect for mobile screens */
+        letter-spacing: -1px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+
+    /* 3. BENTO GRID: Proper Stacking */
+    .bento-section {
+        grid-template-columns: 1fr; /* Force 1 column */
+        gap: 15px;
+        padding: 20px 15px;
+    }
+
+    .bento-item {
+        grid-column: span 12 !important; /* Force all boxes to full width */
+        padding: 30px 20px;
+        min-height: auto;
+    }
+
+    /* 4. SQUAD GRID: 1 Column on Mobile */
+    .squad-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
     .bento-section .squad-grid {
+        grid-column: span 12;
         grid-template-columns: 1fr;
     }
-    .large, .small {
-        grid-column: span 12; 
+
+    /* 5. GEAR CARD: Fix the kit overlapping text */
+    .kit-preview {
+        width: 70%; /* Slightly larger on mobile to show detail */
+        transform: scale(1) translateY(20px);
+        margin-top: 20px;
     }
-    .bento-section .apple-card {
-        height: auto; 
-        min-height: 250px;
+
+    .gear-image-container {
+        position: relative; /* Stop it floating over the text */
+        left: 0;
+        height: 200px;
+        margin-top: 20px;
+    }
+
+    .gear-card {
+        height: auto !important; /* Let the card grow with the content */
+    }
+
+    /* 6. RESULTS & BLOG */
+    .match-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .match-outcome {
+        text-align: center;
+    }
+
+    .match-teams {
+        font-size: 20px;
+    }
+
+    /* 7. SQUAD NUMBERS: Don't clash with the Tag */
+    .squad-number {
+        top: 20px;
+        right: 20px;
+        font-size: 10px;
+    }
+
+    .apple-card {
+        padding: 20px;
+    }
+}
+
+/* Small Phones (iPhone SE etc.) */
+@media (max-width: 380px) {
+    .hero h1 {
+        font-size: 34px;
     }
 }
 
