@@ -122,6 +122,7 @@ footer {
     margin-bottom: 20px;
     background: linear-gradient(180deg, #fff 0%, #86868b 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -537,7 +538,7 @@ footer {
     }
 
     .bento-item {
-        grid-column: span 12 !important; /* Force all boxes to full width */
+        grid-column: span 1 !important; /* Force to 1 column so it doesn't overflow */
         padding: 30px 20px;
         min-height: auto;
     }
@@ -549,7 +550,7 @@ footer {
     }
 
     .bento-section .squad-grid {
-        grid-column: span 12;
+        grid-column: span 1;
         grid-template-columns: 1fr;
     }
 
