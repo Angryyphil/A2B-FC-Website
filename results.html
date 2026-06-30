@@ -50,12 +50,29 @@
 
         <h2 class="section-divider">Fixtures & Results</h2>
 
-        <section class="bento-section results-grid">
+        <!-- SLIMLINE PERFORMANCE BAR (Centered & Stacked) -->
+        <div
+            style="width: 100%; box-sizing: border-box; background: rgba(22, 22, 23, 0.6); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 30px; padding: 16px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
 
-            <div class="bento-item full summary-card">
-                <h3>Current Season Performance</h3>
-                <p>The board remains "confident"... (Delusional).</p>
+            <!-- Centered Status Tag -->
+            <div
+                style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 4px 12px; border-radius: 6px;">
+                <span
+                    style="font-size: 11px; font-weight: 700; color: var(--a2b-gold); text-transform: uppercase; letter-spacing: 1.5px;">Performance</span>
             </div>
+
+            <!-- Centered Quips -->
+            <p style="font-size: 13px; color: var(--text-secondary); margin: 0; text-align: center; line-height: 1.6;">
+                <b style="color: var(--text-primary);">Board Confidence:</b> Dangerously high (until kickoff).
+                <span style="margin: 0 10px; opacity: 0.3; display: inline-block;">|</span>
+                <b style="color: var(--text-primary);">Penalty Success:</b> Undefined (an improvement).
+                <span style="margin: 0 10px; opacity: 0.3; display: inline-block;">|</span>
+                <b style="color: var(--text-primary);">Current Vibe:</b> Data-driven delusion.
+            </p>
+
+        </div>
+
+        <section class="bento-section results-grid">
 
             <div class="bento-item full result-card loss">
                 <div class="result-header">
@@ -64,7 +81,8 @@
                 </div>
                 <div class="result-main">
                     <h3 class="result-score">A2B FC — <span class="opponent">Pending Season Opener</span></h3>
-                    <p class="result-verdict"><b>The Verdict:</b> Still awaiting the new season opening fixtures.</p>
+                    <p class="result-verdict"><b>The Verdict:</b> Still awaiting the new season opening
+                        fixtures.</p>
                 </div>
             </div>
 
